@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head">
+    <link th:href="">
 </head>
 <body>
 
@@ -12,7 +13,19 @@
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
 
+
+    <table style  th:each="job : ${jobs}">
+        <tr><td th:text=" 'ID: ' + ${job.id}"></td></tr>
+        <tr><td th:text=" 'Name: ' + ${job.name}"></td></tr>
+        <tr><td th:text=" 'Employer: ' + ${job.employer}"></td></tr>
+        <tr><td th:text=" 'Location: ' + ${job.location}"></td></tr>
+        <tr><td th:text="'Position Type:  ' +${job.positionType}"></td></tr>
+        <tr><td th:text=" 'Core Competency: ' + ${job.coreCompetency}"></td></tr>
+        <br>
+    </table>
+
 </div>
 
 </body>
 </html>
+
